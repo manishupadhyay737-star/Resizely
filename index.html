@@ -1,736 +1,129 @@
-<!DOCTYPE html>
+from pathlib import Path
+
+src = Path("/mnt/data/resizely_source.txt")
+html = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-<!-- Primary SEO -->
 <title>Free Online Image Resizer & Compressor | Resizely</title>
 <meta name="description" content="Resize and compress JPG, PNG, WebP or GIF images online for free. Change dimensions, adjust quality, and shrink file size — instantly, right in your browser. No uploads, no sign-up.">
 <meta name="keywords" content="image resizer, resize images online, image compressor, compress jpg, compress png, reduce image size, resize photo online, free image resizer, shrink image file size, webp converter">
 <meta name="author" content="Resizely">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://www.resizely.app/">
+<link rel="canonical" href="https://gentle-sea-0ca52db10.1.azurestaticapps.net/">
 <meta name="theme-color" content="#2451FF">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%232451FF'/%3E%3Cpath d='M4 15L9 10L13 14L20 7' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Resizely">
-<meta property="og:url" content="https://www.resizely.app/">
+<meta property="og:url" content="https://gentle-sea-0ca52db10.1.azurestaticapps.net/">
 <meta property="og:title" content="Free Online Image Resizer & Compressor | Resizely">
-<meta property="og:description" content="Resize and compress JPG, PNG, WebP or GIF images online for free. Change dimensions, adjust quality, and shrink file size — instantly, right in your browser.">
-<meta property="og:image" content="https://www.resizely.app/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:description" content="Resize and compress JPG, PNG, WebP or GIF images online for free — instantly in your browser. No uploads, no sign-up.">
 <meta property="og:locale" content="en_US">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Free Online Image Resizer & Compressor | Resizely">
-<meta name="twitter:description" content="Resize and compress JPG, PNG, WebP or GIF images online for free — instantly, right in your browser. No uploads, no sign-up.">
-<meta name="twitter:image" content="https://www.resizely.app/og-image.png">
+<meta name="twitter:description" content="Resize and compress JPG, PNG, WebP or GIF images online for free — instantly in your browser. No uploads, no sign-up.">
 
-<!-- Structured data -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Resizely",
-  "url": "https://www.resizely.app/",
-  "description": "Free online tool to resize and compress JPG, PNG, WebP and GIF images directly in the browser, with no uploads required.",
-  "applicationCategory": "MultimediaApplication",
-  "operatingSystem": "Any",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "featureList": [
-    "Resize images by width, height or percentage",
-    "Compress JPG, PNG and WebP images",
-    "Convert between JPG, PNG and WebP",
-    "Batch download of resized images",
-    "All processing happens locally in the browser"
-  ]
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Resizely",
+  "url":"https://gentle-sea-0ca52db10.1.azurestaticapps.net/",
+  "description":"Free online tool to resize and compress JPG, PNG, WebP and GIF images directly in the browser, with no uploads required.",
+  "applicationCategory":"MultimediaApplication",
+  "operatingSystem":"Any",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "featureList":["Resize images by width or height","Compress JPG, PNG and WebP images","Convert between JPG, PNG and WebP","Batch image processing","Local browser-based processing"]
 }
 </script>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is Resizely really free?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Resizing and compressing images costs nothing, has no watermark, and doesn't require an account." }
-    },
-    {
-      "@type": "Question",
-      "name": "Do my images get uploaded anywhere?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. Every resize happens on your own device using your browser's canvas engine — files never touch a server." }
-    },
-    {
-      "@type": "Question",
-      "name": "Which image formats are supported?",
-      "acceptedAnswer": { "@type": "Answer", "text": "You can resize and compress JPG, PNG, WebP and GIF files, and convert between JPG, PNG and WebP on export." }
-    },
-    {
-      "@type": "Question",
-      "name": "What size should I use for social media or email?",
-      "acceptedAnswer": { "@type": "Answer", "text": "1200x1200px at 80-85% quality works well for social posts; 1900x1100px at 90% quality is a safe, sharp size for email or messaging." }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.resizely.app/"
-    }
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is Resizely really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Resizing and compressing images is free and does not require an account."}},
+    {"@type":"Question","name":"Do my images get uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Resizely processes images locally in your browser using browser APIs."}},
+    {"@type":"Question","name":"Which formats are supported?","acceptedAnswer":{"@type":"Answer","text":"Resizely supports JPG, PNG, WebP and GIF input, with JPG, PNG and WebP export."}}
   ]
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#F5F6F9;
-    --surface:#FFFFFF;
-    --ink:#1C1F26;
-    --ink-soft:#5B6072;
-    --border:#E3E5EC;
-    --accent:#2451FF;
-    --accent-ink:#FFFFFF;
-    --teal:#00B39C;
-    --danger:#E24C4C;
-    --radius:14px;
-    box-sizing:border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#14161B;
-      --surface:#1B1E26;
-      --ink:#F1F2F6;
-      --ink-soft:#9BA0B2;
-      --border:#2C2F3A;
-      --accent:#5C82FF;
-      --accent-ink:#0B0D12;
-      --teal:#2EDBC2;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#14161B;
-    --surface:#1B1E26;
-    --ink:#F1F2F6;
-    --ink-soft:#9BA0B2;
-    --border:#2C2F3A;
-    --accent:#5C82FF;
-    --accent-ink:#0B0D12;
-    --teal:#2EDBC2;
-  }
-  html{scroll-padding-top: env(safe-area-inset-top, 0px);}
-  *{box-sizing:border-box;}
-  html,body{height:100%;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Inter',system-ui,-apple-system,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit;}
-  h1,h2,h3{font-family:'Sora',system-ui,sans-serif; margin:0;}
-
-  .wrap{max-width:1040px; margin:0 auto; padding:0 24px;}
-
-  header.site{
-    position:sticky; top:0; z-index:20;
-    top: env(safe-area-inset-top, 0px);
-    background:color-mix(in srgb, var(--bg) 85%, transparent);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--border);
-  }
-  header.site .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:64px;
-  }
-  .logo{
-    display:flex; align-items:center; gap:9px;
-    font-family:'Sora',sans-serif; font-weight:700; font-size:19px; letter-spacing:-0.01em;
-  }
-  .logo .mark{
-    width:26px; height:26px; border-radius:8px;
-    background:linear-gradient(135deg,var(--accent),var(--teal));
-    display:flex; align-items:center; justify-content:center;
-    flex-shrink:0;
-  }
-  .logo .mark svg{width:15px; height:15px;}
-  .tagline-pill{
-    font-size:13px; color:var(--ink-soft); font-weight:500;
-    display:none;
-  }
-  @media(min-width:640px){ .tagline-pill{display:inline;} }
-
-  main{padding:48px 0 80px;}
-
-  .hero{padding:28px 0 40px; text-align:center;}
-  .hero h1{
-    font-size:clamp(30px,5.4vw,46px);
-    line-height:1.08; letter-spacing:-0.02em; font-weight:700;
-    max-width:680px; margin:0 auto;
-  }
-  .hero p{
-    margin:16px auto 0; max-width:480px;
-    color:var(--ink-soft); font-size:16px; line-height:1.55;
-  }
-
-  .dropzone{
-    margin-top:32px;
-    border:2px dashed var(--border);
-    border-radius:20px;
-    background:var(--surface);
-    padding:46px 24px;
-    text-align:center;
-    cursor:pointer;
-    transition:border-color .15s ease, background .15s ease;
-  }
-  .dropzone.drag{
-    border-color:var(--accent);
-    background:color-mix(in srgb, var(--accent) 6%, var(--surface));
-  }
-  .dropzone .icon{
-    width:52px; height:52px; margin:0 auto 14px;
-    border-radius:50%;
-    background:color-mix(in srgb, var(--accent) 12%, transparent);
-    display:flex; align-items:center; justify-content:center;
-  }
-  .dropzone .icon svg{width:24px; height:24px; stroke:var(--accent);}
-  .dropzone strong{font-size:16px; display:block; margin-bottom:4px;}
-  .dropzone span{font-size:13.5px; color:var(--ink-soft);}
-  .dropzone input{display:none;}
-
-  .privacy-note{
-    margin-top:14px; text-align:center;
-    font-size:12.5px; color:var(--ink-soft);
-    display:flex; align-items:center; justify-content:center; gap:6px;
-  }
-  .privacy-note svg{width:13px; height:13px; stroke:var(--teal); flex-shrink:0;}
-
-  /* Queue / cards */
-  .queue{margin-top:40px; display:flex; flex-direction:column; gap:14px;}
-  .card{
-    background:var(--surface);
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    padding:18px;
-    display:grid;
-    grid-template-columns:64px 1fr;
-    gap:16px;
-  }
-  @media(min-width:760px){
-    .card{grid-template-columns:80px 1fr auto;}
-  }
-  .thumb{
-    width:64px; height:64px; border-radius:10px; overflow:hidden;
-    background:var(--bg); border:1px solid var(--border);
-    flex-shrink:0;
-  }
-  @media(min-width:760px){ .thumb{width:80px; height:80px;} }
-  .thumb img{width:100%; height:100%; object-fit:cover; display:block;}
-
-  .card-body{min-width:0;}
-  .file-row{display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap;}
-  .file-name{font-weight:600; font-size:14.5px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:280px;}
-  .file-meta{font-size:12.5px; color:var(--ink-soft); white-space:nowrap;}
-  .file-meta .arrow{margin:0 4px; color:var(--ink-soft);}
-  .file-meta .new-size{color:var(--teal); font-weight:600;}
-
-  .controls-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:10px 12px; margin-top:14px;
-  }
-  @media(min-width:520px){ .controls-grid{grid-template-columns:1fr 1fr 1fr 1fr;} }
-
-  .field{display:flex; flex-direction:column; gap:5px;}
-  .field label{font-size:11px; text-transform:none; color:var(--ink-soft); font-weight:600;}
-  .field input[type=number], .field select{
-    font-family:'Inter',sans-serif;
-    font-size:14px; padding:8px 9px;
-    border:1px solid var(--border); border-radius:8px;
-    background:var(--bg); color:var(--ink);
-    width:100%;
-  }
-  .field input[type=number]:focus, .field select:focus, .dropzone:focus-visible, button:focus-visible{
-    outline:2px solid var(--accent); outline-offset:1px;
-  }
-
-  .dims-row{display:flex; align-items:center; gap:6px;}
-  .dims-row .field{flex:1;}
-  .lock-btn{
-    align-self:flex-end;
-    width:34px; height:34px; border-radius:8px;
-    border:1px solid var(--border); background:var(--bg);
-    display:flex; align-items:center; justify-content:center;
-    cursor:pointer; flex-shrink:0; color:var(--ink-soft);
-  }
-  .lock-btn[aria-pressed="true"]{ color:var(--accent); border-color:var(--accent); }
-  .lock-btn svg{width:15px; height:15px;}
-
-  .quality-field{grid-column:span 2;}
-  @media(min-width:520px){ .quality-field{grid-column:span 2;} }
-  .quality-row{display:flex; align-items:center; gap:10px;}
-  .quality-row input[type=range]{flex:1; accent-color:var(--accent);}
-  .quality-val{font-size:12.5px; color:var(--ink-soft); width:34px; text-align:right; flex-shrink:0;}
-
-  .card-actions{
-    display:flex; gap:8px; margin-top:14px; align-items:center;
-    flex-wrap:wrap;
-  }
-  @media(min-width:760px){
-    .card-actions{flex-direction:column; margin-top:0; align-items:stretch; justify-content:center; min-width:130px;}
-  }
-
-  button{font-family:'Inter',sans-serif; cursor:pointer;}
-  .btn{
-    border-radius:9px; padding:9px 14px; font-size:13.5px; font-weight:600;
-    border:1px solid transparent; white-space:nowrap;
-    display:inline-flex; align-items:center; justify-content:center; gap:6px;
-  }
-  .btn-primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent);}
-  .btn-primary:disabled{opacity:.55; cursor:default;}
-  .btn-ghost{background:transparent; color:var(--ink-soft); border-color:var(--border);}
-  .btn-ghost:hover{color:var(--ink); border-color:var(--ink-soft);}
-  .btn svg{width:14px; height:14px;}
-
-  .queue-footer{
-    display:flex; align-items:center; justify-content:space-between;
-    margin-top:6px; gap:12px; flex-wrap:wrap;
-  }
-  .queue-footer .hint{font-size:13px; color:var(--ink-soft);}
-
-  /* How it works */
-  .how{margin-top:88px;}
-  .how h2{font-size:24px; text-align:center; margin-bottom:6px;}
-  .how > p{text-align:center; color:var(--ink-soft); font-size:14.5px; margin:0 0 34px;}
-  .steps{
-    display:grid; gap:20px;
-    grid-template-columns:1fr;
-  }
-  @media(min-width:700px){ .steps{grid-template-columns:repeat(3,1fr);} }
-  .step{
-    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
-    padding:20px;
-  }
-  .step .num{
-    font-family:'Sora',sans-serif; font-weight:700; font-size:13px;
-    color:var(--accent);
-    width:26px; height:26px; border-radius:50%;
-    border:1.5px solid var(--accent);
-    display:flex; align-items:center; justify-content:center;
-    margin-bottom:12px;
-  }
-  .step h3{font-size:15.5px; margin-bottom:6px;}
-  .step p{font-size:13.5px; color:var(--ink-soft); line-height:1.55; margin:0;}
-
-  footer.site{
-    margin-top:90px; border-top:1px solid var(--border);
-    padding:28px 0 calc(28px + env(safe-area-inset-bottom, 0px));
-  }
-  footer.site .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:10px;
-  }
-  footer.site p{font-size:12.5px; color:var(--ink-soft); margin:0;}
-
-  .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+:root{--bg:#F5F6F9;--surface:#fff;--ink:#1C1F26;--soft:#5B6072;--border:#E3E5EC;--accent:#2451FF;--teal:#00B39C}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,system-ui,sans-serif}a{color:inherit}.wrap{max-width:1040px;margin:auto;padding:0 24px}
+header{border-bottom:1px solid var(--border);background:var(--surface)}header .wrap{height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:19px;font-weight:700}.tag{font-size:13px;color:var(--soft)}
+main{padding:45px 0 75px}.hero{text-align:center}.hero h1{font-size:clamp(30px,5vw,46px);margin:0;line-height:1.08}.hero p{max-width:650px;margin:16px auto;color:var(--soft);line-height:1.6}
+.dropzone{margin:30px auto 0;max-width:850px;border:2px dashed var(--border);border-radius:20px;background:var(--surface);padding:46px 24px;text-align:center;cursor:pointer}.dropzone strong{display:block;margin-bottom:7px}.dropzone span{font-size:13px;color:var(--soft)}.dropzone:focus{outline:2px solid var(--accent)}input[type=file]{display:none}
+.privacy{text-align:center;color:var(--soft);font-size:12.5px;margin-top:13px}
+.queue{margin-top:38px;display:grid;gap:14px}.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;display:grid;grid-template-columns:64px 1fr;gap:16px}.thumb{width:64px;height:64px;object-fit:cover;border-radius:10px;background:#eee}.body{min-width:0}.name{font-weight:600}.meta{font-size:12px;color:var(--soft);margin-top:5px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.field label{display:block;font-size:11px;color:var(--soft);margin-bottom:5px}.field input,.field select{width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--bg)}button{cursor:pointer}.actions{margin-top:14px;display:flex;gap:8px}.btn{border:1px solid var(--border);border-radius:9px;padding:9px 14px;background:var(--surface);font-weight:600}.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.footerbar{display:none;margin-top:10px;justify-content:space-between;gap:12px;align-items:center}.hint{font-size:13px;color:var(--soft)}
+.how{margin-top:80px}.how h2{text-align:center}.how>p{text-align:center;color:var(--soft)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px}.step h3{font-size:16px}.step p{font-size:13.5px;color:var(--soft);line-height:1.55}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:14px}.faq .step{min-height:120px}
+footer{border-top:1px solid var(--border);padding:28px 0;color:var(--soft);font-size:12.5px}
+@media(min-width:760px){.card{grid-template-columns:80px 1fr auto}.thumb{width:80px;height:80px}.actions{flex-direction:column;min-width:130px;margin-top:0}}
+@media(max-width:700px){.steps,.faq{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<header><div class="wrap"><div class="logo">Resizely</div><div class="tag">Resize & compress images locally</div></div></header>
+<main><div class="wrap">
+<section class="hero">
+<h1>Free Online Image Resizer & Compressor</h1>
+<p>Resize, compress and convert JPG, PNG, WebP and GIF images directly in your browser. Your image files stay on your device.</p>
+<div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload images">
+<strong>Drop images here, or click to browse</strong><span>JPG, PNG, WebP or GIF — multiple files supported</span>
+<input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple>
+</div>
+<div class="privacy">🔒 Your images are processed locally in your browser.</div>
+</section>
 
-<header class="site">
-  <div class="wrap">
-    <div class="logo">
-      <span class="mark">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 15L9 10L13 14L20 7" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      Resizely
-    </div>
-    <span class="tagline-pill">Resize &amp; compress images, locally</span>
-  </div>
-</header>
+<section class="queue" id="queue"></section>
+<div class="footerbar" id="footerbar"><span class="hint" id="hint"></span><button class="btn primary" id="downloadAll">Download all</button></div>
 
-<main>
-  <div class="wrap">
-    <section class="hero">
-      <h1>Shrink big photos into small, shareable files</h1>
-      <p>Drop in a JPG, PNG or WebP, pick a size and quality, and download the result. Nothing uploads to a server — it's all done right in this tab.</p>
+<section class="how">
+<h2>How it works</h2><p>Resize and compress images in three simple steps.</p>
+<div class="steps">
+<div class="step"><h3>1. Add your images</h3><p>Drag photos into the tool or select them from your device.</p></div>
+<div class="step"><h3>2. Set size and quality</h3><p>Choose width, height, output format and quality.</p></div>
+<div class="step"><h3>3. Download</h3><p>Download each processed image or download all results.</p></div>
+</div>
+</section>
 
-      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload images">
-        <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 16V4M12 4L7 9M12 4L17 9"/>
-            <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/>
-          </svg>
-        </div>
-        <strong>Drop images here, or click to browse</strong>
-        <span>JPG, PNG, WebP or GIF — as many as you like</span>
-        <input type="file" id="fileInput" accept="image/png,image/jpeg,image/webp,image/gif" multiple>
-      </div>
+<section class="how" id="faq">
+<h2>Frequently Asked Questions</h2><p>Common questions about Resizely.</p>
+<div class="faq">
+<div class="step"><h3>Is Resizely free?</h3><p>Yes. The image resizing and compression tool is free to use and does not require an account.</p></div>
+<div class="step"><h3>Are images uploaded?</h3><p>No. Image processing happens in your browser, so the core tool does not need to upload image pixels to a server.</p></div>
+<div class="step"><h3>Which formats are supported?</h3><p>JPG, PNG, WebP and GIF files can be selected. JPG, PNG and WebP are available as output formats.</p></div>
+<div class="step"><h3>Can I resize multiple images?</h3><p>Yes. Multiple images can be added and processed in the same session.</p></div>
+</div></section>
+</div></main>
 
-      <div class="privacy-note">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
-        Your images never leave your device
-      </div>
-    </section>
-
-    <section class="queue" id="queue"></section>
-
-    <div class="queue-footer" id="queueFooter" style="display:none;">
-      <span class="hint" id="queueHint"></span>
-      <button class="btn btn-primary" id="downloadAll">Download all</button>
-    </div>
-
-    <section class="how">
-      <h2>How it works</h2>
-      <p>Three steps, no waiting on an upload bar.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="num">1</div>
-          <h3>Add your images</h3>
-          <p>Drag a batch of photos into the box above, or click to browse your device.</p>
-        </div>
-        <div class="step">
-          <div class="num">2</div>
-          <h3>Set size &amp; quality</h3>
-          <p>Type a new width or height, or scale by percent. Adjust the quality slider to trade sharpness for file size.</p>
-        </div>
-        <div class="step">
-          <div class="num">3</div>
-          <h3>Download the result</h3>
-          <p>Grab one file at a time or everything at once — already renamed and ready to send.</p>
-        </div>
-      </div>
-    </section>
-    <section class="how" id="faq">
-      <h2>Common questions</h2>
-      <p>What people usually ask before resizing their first image.</p>
-      <div class="steps">
-        <div class="step">
-          <h3>Is Resizely really free?</h3>
-          <p>Yes. Resizing and compressing images costs nothing, has no watermark, and doesn't require an account.</p>
-        </div>
-        <div class="step">
-          <h3>Do my images get uploaded anywhere?</h3>
-          <p>No. Every resize happens on your own device using your browser's canvas engine — files never touch a server.</p>
-        </div>
-        <div class="step">
-          <h3>Which formats are supported?</h3>
-          <p>You can resize and compress JPG, PNG, WebP and GIF files, and convert between JPG, PNG and WebP on export.</p>
-        </div>
-        <div class="step">
-          <h3>What size should I use for social media or email?</h3>
-          <p>1200×1200px at 80–85% quality works well for social posts; 1900×1100px at 90% quality is a safe, sharp size for email or messaging.</p>
-        </div>
-      </div>
-    </section>
-  </div>
-</main>
-
-<footer class="site">
-  <div class="wrap">
-    <div class="logo" style="font-size:15px;">
-      <span class="mark" style="width:20px;height:20px;">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 15L9 10L13 14L20 7" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      Resizely
-    </div>
-    <p>Processing happens in your browser — no images are stored or transmitted.</p>
-  </div>
-</footer>
+<footer><div class="wrap"><strong>Resizely</strong><br>Browser-based image resizing and compression. No image upload is required for the core tool.</div></footer>
 
 <script>
-(function(){
-  const dropzone = document.getElementById('dropzone');
-  const fileInput = document.getElementById('fileInput');
-  const queue = document.getElementById('queue');
-  const queueFooter = document.getElementById('queueFooter');
-  const queueHint = document.getElementById('queueHint');
-  const downloadAllBtn = document.getElementById('downloadAll');
-
-  let items = []; // {id, file, img, origW, origH, card, state}
-
-  function fmtBytes(n){
-    if(n < 1024) return n + ' B';
-    if(n < 1024*1024) return (n/1024).toFixed(0) + ' KB';
-    return (n/(1024*1024)).toFixed(2) + ' MB';
-  }
-
-  function iconSvg(name){
-    if(name==='download') return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M12 15l-4-4M12 15l4-4"/><path d="M4 18v1a2 2 0 002 2h12a2 2 0 002-2v-1"/></svg>';
-    if(name==='lock') return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>';
-    if(name==='unlock') return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 017.5-2"/></svg>';
-    if(name==='x') return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
-    return '';
-  }
-
-  function openPicker(){ fileInput.click(); }
-  dropzone.addEventListener('click', openPicker);
-  dropzone.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openPicker(); }});
-
-  ['dragenter','dragover'].forEach(evt=>{
-    dropzone.addEventListener(evt, e=>{ e.preventDefault(); dropzone.classList.add('drag'); });
-  });
-  ['dragleave','drop'].forEach(evt=>{
-    dropzone.addEventListener(evt, e=>{ e.preventDefault(); dropzone.classList.remove('drag'); });
-  });
-  dropzone.addEventListener('drop', e=>{
-    handleFiles(e.dataTransfer.files);
-  });
-  fileInput.addEventListener('change', e=>{
-    handleFiles(e.target.files);
-    fileInput.value = '';
-  });
-
-  function handleFiles(fileList){
-    const files = Array.from(fileList).filter(f => f.type.startsWith('image/'));
-    files.forEach(addItem);
-  }
-
-  function addItem(file){
-    const id = 'im_' + Math.random().toString(36).slice(2,9);
-    const url = URL.createObjectURL(file);
-    const img = new Image();
-    img.onload = () => {
-      const item = {
-        id, file, img,
-        origW: img.naturalWidth, origH: img.naturalHeight,
-        locked: true,
-        format: file.type === 'image/png' ? 'png' : (file.type === 'image/webp' ? 'webp' : 'jpeg'),
-        quality: 0.85,
-        blob: null,
-      };
-      items.push(item);
-      renderCard(item, url);
-      updateFooter();
-    };
-    img.onerror = () => URL.revokeObjectURL(url);
-    img.src = url;
-  }
-
-  function renderCard(item, thumbUrl){
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.dataset.id = item.id;
-
-    card.innerHTML = `
-      <div class="thumb"><img src="${thumbUrl}" alt="Preview of ${escapeHtml(item.file.name)}"></div>
-      <div class="card-body">
-        <div class="file-row">
-          <span class="file-name">${escapeHtml(item.file.name)}</span>
-          <span class="file-meta" data-role="meta">${item.origW}×${item.origH} · ${fmtBytes(item.file.size)}</span>
-        </div>
-        <div class="controls-grid">
-          <div class="dims-row" style="grid-column:1 / -1; display:flex;">
-            <div class="field">
-              <label for="w_${item.id}">Width (px)</label>
-              <input type="number" min="1" id="w_${item.id}" data-role="w" value="${item.origW}">
-            </div>
-            <button type="button" class="lock-btn" data-role="lock" aria-pressed="true" title="Keep aspect ratio locked">${iconSvg('lock')}</button>
-            <div class="field">
-              <label for="h_${item.id}">Height (px)</label>
-              <input type="number" min="1" id="h_${item.id}" data-role="h" value="${item.origH}">
-            </div>
-          </div>
-          <div class="field">
-            <label for="fmt_${item.id}">Format</label>
-            <select id="fmt_${item.id}" data-role="fmt">
-              <option value="jpeg" ${item.format==='jpeg'?'selected':''}>JPG</option>
-              <option value="png" ${item.format==='png'?'selected':''}>PNG</option>
-              <option value="webp" ${item.format==='webp'?'selected':''}>WebP</option>
-            </select>
-          </div>
-          <div class="field quality-field" data-role="qualityWrap">
-            <label for="q_${item.id}">Quality</label>
-            <div class="quality-row">
-              <input type="range" min="0.3" max="1" step="0.05" id="q_${item.id}" data-role="q" value="${item.quality}">
-              <span class="quality-val" data-role="qval">${Math.round(item.quality*100)}%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-actions">
-        <button class="btn btn-primary" data-role="process">Resize image</button>
-        <button class="btn btn-ghost" data-role="remove">Remove</button>
-      </div>
-    `;
-    queue.appendChild(card);
-    item.card = card;
-    wireCard(item);
-    toggleQuality(item);
-  }
-
-  function escapeHtml(s){
-    return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  }
-
-  function toggleQuality(item){
-    const wrap = item.card.querySelector('[data-role="qualityWrap"]');
-    wrap.style.display = item.format === 'png' ? 'none' : 'flex';
-  }
-
-  function wireCard(item){
-    const card = item.card;
-    const wInput = card.querySelector('[data-role="w"]');
-    const hInput = card.querySelector('[data-role="h"]');
-    const lockBtn = card.querySelector('[data-role="lock"]');
-    const fmtSel = card.querySelector('[data-role="fmt"]');
-    const qInput = card.querySelector('[data-role="q"]');
-    const qVal = card.querySelector('[data-role="qval"]');
-    const processBtn = card.querySelector('[data-role="process"]');
-    const removeBtn = card.querySelector('[data-role="remove"]');
-
-    wInput.addEventListener('input', () => {
-      const w = parseInt(wInput.value, 10);
-      if(item.locked && w > 0){
-        hInput.value = Math.round(w * item.origH / item.origW);
-      }
-      resetProcessed(item);
-    });
-    hInput.addEventListener('input', () => {
-      const h = parseInt(hInput.value, 10);
-      if(item.locked && h > 0){
-        wInput.value = Math.round(h * item.origW / item.origH);
-      }
-      resetProcessed(item);
-    });
-    lockBtn.addEventListener('click', () => {
-      item.locked = !item.locked;
-      lockBtn.setAttribute('aria-pressed', item.locked);
-      lockBtn.innerHTML = iconSvg(item.locked ? 'lock' : 'unlock');
-      lockBtn.title = item.locked ? 'Keep aspect ratio locked' : 'Aspect ratio unlocked';
-    });
-    fmtSel.addEventListener('change', () => {
-      item.format = fmtSel.value;
-      toggleQuality(item);
-      resetProcessed(item);
-    });
-    qInput.addEventListener('input', () => {
-      item.quality = parseFloat(qInput.value);
-      qVal.textContent = Math.round(item.quality * 100) + '%';
-      resetProcessed(item);
-    });
-    processBtn.addEventListener('click', () => processItem(item));
-    removeBtn.addEventListener('click', () => removeItem(item));
-  }
-
-  function resetProcessed(item){
-    item.blob = null;
-    const processBtn = item.card.querySelector('[data-role="process"]');
-    processBtn.textContent = 'Resize image';
-    processBtn.onclick = () => processItem(item);
-  }
-
-  function processItem(item){
-    const wInput = item.card.querySelector('[data-role="w"]');
-    const hInput = item.card.querySelector('[data-role="h"]');
-    const targetW = Math.max(1, parseInt(wInput.value, 10) || item.origW);
-    const targetH = Math.max(1, parseInt(hInput.value, 10) || item.origH);
-
-    const canvas = document.createElement('canvas');
-    canvas.width = targetW;
-    canvas.height = targetH;
-    const ctx = canvas.getContext('2d');
-    if(item.format !== 'png'){
-      ctx.fillStyle = '#FFFFFF';
-      ctx.fillRect(0, 0, targetW, targetH);
-    }
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = 'high';
-    ctx.drawImage(item.img, 0, 0, targetW, targetH);
-
-    const mime = 'image/' + item.format;
-    canvas.toBlob(blob => {
-      if(!blob){ return; }
-      item.blob = blob;
-      const meta = item.card.querySelector('[data-role="meta"]');
-      meta.innerHTML = `${item.origW}×${item.origH} · ${fmtBytes(item.file.size)}<span class="arrow">→</span>${targetW}×${targetH} · <span class="new-size">${fmtBytes(blob.size)}</span>`;
-
-      const processBtn = item.card.querySelector('[data-role="process"]');
-      processBtn.innerHTML = iconSvg('download') + ' Download';
-      processBtn.onclick = () => downloadItem(item);
-      updateFooter();
-    }, mime, item.format === 'png' ? undefined : item.quality);
-  }
-
-  function downloadItem(item){
-    if(!item.blob) return;
-    const ext = item.format === 'jpeg' ? 'jpg' : item.format;
-    const base = item.file.name.replace(/\.[^.]+$/, '');
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(item.blob);
-    a.download = `${base}-resized.${ext}`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-  }
-
-  function removeItem(item){
-    items = items.filter(i => i.id !== item.id);
-    item.card.remove();
-    updateFooter();
-  }
-
-  function updateFooter(){
-    if(items.length === 0){
-      queueFooter.style.display = 'none';
-      return;
-    }
-    queueFooter.style.display = 'flex';
-    const done = items.filter(i => i.blob).length;
-    queueHint.textContent = `${items.length} image${items.length>1?'s':''} added · ${done} resized`;
-  }
-
-  downloadAllBtn.addEventListener('click', () => {
-    items.forEach(item => {
-      if(!item.blob) processAndDownload(item);
-      else downloadItem(item);
-    });
-  });
-
-  function processAndDownload(item){
-    const wInput = item.card.querySelector('[data-role="w"]');
-    const hInput = item.card.querySelector('[data-role="h"]');
-    const targetW = Math.max(1, parseInt(wInput.value, 10) || item.origW);
-    const targetH = Math.max(1, parseInt(hInput.value, 10) || item.origH);
-    const canvas = document.createElement('canvas');
-    canvas.width = targetW; canvas.height = targetH;
-    const ctx = canvas.getContext('2d');
-    if(item.format !== 'png'){ ctx.fillStyle = '#FFFFFF'; ctx.fillRect(0,0,targetW,targetH); }
-    ctx.drawImage(item.img, 0, 0, targetW, targetH);
-    const mime = 'image/' + item.format;
-    canvas.toBlob(blob => {
-      if(!blob) return;
-      item.blob = blob;
-      downloadItem(item);
-      updateFooter();
-    }, mime, item.format === 'png' ? undefined : item.quality);
-  }
+(()=>{const input=document.getElementById('fileInput'),drop=document.getElementById('dropzone'),queue=document.getElementById('queue'),bar=document.getElementById('footerbar'),hint=document.getElementById('hint'),all=document.getElementById('downloadAll');let items=[];
+const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>n<1024?n+' B':n<1048576?(n/1024).toFixed(0)+' KB':(n/1048576).toFixed(2)+' MB';
+function pick(){input.click()}drop.onclick=pick;drop.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}};input.onchange=e=>{add(e.target.files);input.value=''};
+['dragenter','dragover'].forEach(x=>drop.addEventListener(x,e=>{e.preventDefault();drop.style.borderColor='var(--accent)'}));['dragleave','drop'].forEach(x=>drop.addEventListener(x,e=>{e.preventDefault();drop.style.borderColor=''}));drop.addEventListener('drop',e=>add(e.dataTransfer.files));
+function add(fs){[...fs].filter(f=>f.type.startsWith('image/')).forEach(file=>{const url=URL.createObjectURL(file),img=new Image();img.onload=()=>{const it={file,img,url,w:img.naturalWidth,h:img.naturalHeight,format:file.type==='image/png'?'png':file.type==='image/webp'?'webp':'jpeg',quality:.85,blob:null};items.push(it);card(it);update()};img.src=url})}
+function card(it){const c=document.createElement('div');c.className='card';c.innerHTML='<img class="thumb" alt="Image preview" src="'+it.url+'"><div class="body"><div class="name">'+esc(it.file.name)+'</div><div class="meta" data-meta>'+it.w+'×'+it.h+' · '+fmt(it.file.size)+'</div><div class="controls"><div class="field"><label>Width (px)</label><input data-w type="number" min="1" value="'+it.w+'"></div><div class="field"><label>Height (px)</label><input data-h type="number" min="1" value="'+it.h+'"></div><div class="field"><label>Format</label><select data-f><option value="jpeg">JPG</option><option value="png">PNG</option><option value="webp">WebP</option></select></div><div class="field"><label>Quality</label><input data-q type="range" min=".3" max="1" step=".05" value=".85"></div></div></div><div class="actions"><button class="btn primary" data-p>Resize image</button><button class="btn" data-r>Remove</button></div>';queue.appendChild(c);it.card=c;
+const w=c.querySelector('[data-w]'),h=c.querySelector('[data-h]'),f=c.querySelector('[data-f]'),q=c.querySelector('[data-q]');
+w.oninput=()=>{h.value=Math.round((+w.value||it.w)*it.h/it.w);it.blob=null};h.oninput=()=>{w.value=Math.round((+h.value||it.h)*it.w/it.h);it.blob=null};f.onchange=()=>{it.format=f.value;it.blob=null};q.oninput=()=>{it.quality=+q.value;it.blob=null};
+c.querySelector('[data-p]').onclick=()=>process(it);c.querySelector('[data-r]').onclick=()=>{items=items.filter(x=>x!==it);c.remove();update()}
+}
+function process(it){const c=document.createElement('canvas'),w=Math.max(1,+it.card.querySelector('[data-w]').value||it.w),h=Math.max(1,+it.card.querySelector('[data-h]').value||it.h);c.width=w;c.height=h;const x=c.getContext('2d');if(it.format!=='png'){x.fillStyle='#fff';x.fillRect(0,0,w,h)}x.imageSmoothingQuality='high';x.drawImage(it.img,0,0,w,h);c.toBlob(b=>{if(!b)return;it.blob=b;it.w2=w;it.h2=h;it.card.querySelector('[data-meta]').textContent=it.w+'×'+it.h+' · '+fmt(it.file.size)+' → '+w+'×'+h+' · '+fmt(b.size);const p=it.card.querySelector('[data-p]');p.textContent='Download';p.onclick=()=>download(it);update()},'image/'+it.format,it.format==='png'?undefined:it.quality)}
+function download(it){if(!it.blob)return;const a=document.createElement('a');a.href=URL.createObjectURL(it.blob);a.download=it.file.name.replace(/\.[^.]+$/,'')+'-resized.'+(it.format==='jpeg'?'jpg':it.format);a.click()}
+all.onclick=()=>items.forEach(it=>it.blob?download(it):process(it));
+function update(){bar.style.display=items.length?'flex':'none';hint.textContent=items.length+' image'+(items.length>1?'s':'')+' added · '+items.filter(x=>x.blob).length+' resized'}
 })();
 </script>
+</body></html>"""
 
-</body>
-</html>
+out = Path("/mnt/data/Resizely_SEO_Fixed.html")
+out.write_text(html, encoding="utf-8")
+print(f"Created: {out}")
