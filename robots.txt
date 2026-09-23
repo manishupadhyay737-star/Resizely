@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.resizely.app/sitemap.xml
+Sitemap: https://gentle-sea-0ca52db10.1.azurestaticapps.net/sitemap.xml
