@@ -1,7 +1,4 @@
-from pathlib import Path
-
-src = Path("/mnt/data/resizely_source.txt")
-html = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -21,9 +18,9 @@ html = """<!DOCTYPE html>
 <meta property="og:description" content="Resize and compress JPG, PNG, WebP or GIF images online for free — instantly in your browser. No uploads, no sign-up.">
 <meta property="og:locale" content="en_US">
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free Online Image Resizer & Compressor | Resizely">
-<meta name="twitter:description" content="Resize and compress JPG, PNG, WebP or GIF images online for free — instantly in your browser. No uploads, no sign-up.">
+<meta name="twitter:description" content="Resize, compress and convert JPG, PNG, WebP and GIF images in your browser. No uploads and no sign-up required.">
 
 <script type="application/ld+json">
 {
@@ -65,16 +62,38 @@ main{padding:45px 0 75px}.hero{text-align:center}.hero h1{font-size:clamp(30px,5
 footer{border-top:1px solid var(--border);padding:28px 0;color:var(--soft);font-size:12.5px}
 @media(min-width:760px){.card{grid-template-columns:80px 1fr auto}.thumb{width:80px;height:80px}.actions{flex-direction:column;min-width:130px;margin-top:0}}
 @media(max-width:700px){.steps,.faq{grid-template-columns:1fr}}
+
+.navlinks{display:flex;gap:18px;align-items:center;font-size:13px}.navlinks a{text-decoration:none;color:var(--soft)}.navlinks a:hover{color:var(--accent)}
+.content{margin-top:76px}.content h2{font-size:28px;margin:0 0 10px}.content>p{color:var(--soft);line-height:1.7}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}.feature{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:20px}.feature h3{margin:0 0 8px;font-size:17px}.feature p{margin:0;color:var(--soft);font-size:14px;line-height:1.6}.format-table{width:100%;border-collapse:collapse;margin-top:18px;background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden}.format-table th,.format-table td{padding:12px;text-align:left;border-bottom:1px solid var(--border);font-size:14px}.format-table th{background:#f8f9fc}.cta{margin-top:30px;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:26px}.cta a{display:inline-block;margin-top:12px;background:var(--accent);color:#fff;text-decoration:none;padding:10px 16px;border-radius:9px;font-weight:700}.footer-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px}.footer-links a{text-decoration:none;color:var(--soft)}
+@media(max-width:760px){.navlinks{display:none}.feature-grid{grid-template-columns:1fr}.content{margin-top:58px}}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Resizely",
+  "url":"https://gentle-sea-0ca52db10.1.azurestaticapps.net/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://gentle-sea-0ca52db10.1.azurestaticapps.net/"}
+  ]
+}
+</script>
 </head>
 <body>
-<header><div class="wrap"><div class="logo">Resizely</div><div class="tag">Resize & compress images locally</div></div></header>
+<header><div class="wrap"><div class="logo">Resizely</div><nav class="navlinks" aria-label="Main navigation"><a href="/">Home</a><a href="/image-resizer.html">Image Resizer</a><a href="/image-compressor.html">Image Compressor</a><a href="#faq">FAQ</a></nav><div class="tag">Resize & compress locally</div></div></header>
 <main><div class="wrap">
-<section class="hero">
+<section class="hero" id="top">
 <h1>Free Online Image Resizer & Compressor</h1>
 <p>Resize, compress and convert JPG, PNG, WebP and GIF images directly in your browser. Your image files stay on your device.</p>
 <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload images">
-<strong>Drop images here, or click to browse</strong><span>JPG, PNG, WebP or GIF — multiple files supported</span>
+<strong>Drop images here, or click to choose files</strong><span>JPG, PNG, WebP or GIF — multiple files supported</span>
 <input id="fileInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple>
 </div>
 <div class="privacy">🔒 Your images are processed locally in your browser.</div>
@@ -84,12 +103,26 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--soft);font-
 <div class="footerbar" id="footerbar"><span class="hint" id="hint"></span><button class="btn primary" id="downloadAll">Download all</button></div>
 
 <section class="how">
-<h2>How it works</h2><p>Resize and compress images in three simple steps.</p>
+<h2>How it works</h2><p>Resize, compress and convert images in three simple steps.</p>
 <div class="steps">
 <div class="step"><h3>1. Add your images</h3><p>Drag photos into the tool or select them from your device.</p></div>
 <div class="step"><h3>2. Set size and quality</h3><p>Choose width, height, output format and quality.</p></div>
 <div class="step"><h3>3. Download</h3><p>Download each processed image or download all results.</p></div>
 </div>
+</section>
+
+
+<section class="content" id="features">
+<h2>Free image resizing and compression in your browser</h2>
+<p>Resizely is designed for quick image preparation without requiring an account or a server upload. Choose dimensions, adjust quality and export your image in a supported format from the same browser session.</p>
+<div class="feature-grid">
+<div class="feature"><h3>Private by design</h3><p>Your selected images are processed with browser APIs. The core tool does not need to upload image pixels to a server.</p></div>
+<div class="feature"><h3>Multiple formats</h3><p>Work with JPG, PNG, WebP and GIF input. Export resized images as JPG, PNG or WebP.</p></div>
+<div class="feature"><h3>Simple controls</h3><p>Set width and height, keep proportions, choose an output format and adjust quality before downloading.</p></div>
+</div>
+<h2 style="margin-top:38px">Supported image formats</h2>
+<table class="format-table"><thead><tr><th>Format</th><th>Input</th><th>Output</th><th>Common use</th></tr></thead><tbody><tr><td>JPG / JPEG</td><td>Yes</td><td>Yes</td><td>Photos and web images</td></tr><tr><td>PNG</td><td>Yes</td><td>Yes</td><td>Graphics and transparency</td></tr><tr><td>WebP</td><td>Yes</td><td>Yes</td><td>Modern web images</td></tr><tr><td>GIF</td><td>Yes</td><td>No</td><td>Animated or simple web graphics</td></tr></tbody></table>
+<div class="cta"><strong>Need to resize an image now?</strong><br><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Use the Resizely tool</a></div>
 </section>
 
 <section class="how" id="faq">
@@ -102,7 +135,7 @@ footer{border-top:1px solid var(--border);padding:28px 0;color:var(--soft);font-
 </div></section>
 </div></main>
 
-<footer><div class="wrap"><strong>Resizely</strong><br>Browser-based image resizing and compression. No image upload is required for the core tool.</div></footer>
+<footer><div class="wrap"><strong>Resizely</strong><br>Browser-based image resizing and compression. No image upload is required for the core tool.<div class="footer-links"><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a></div></div></footer>
 
 <script>
 (()=>{const input=document.getElementById('fileInput'),drop=document.getElementById('dropzone'),queue=document.getElementById('queue'),bar=document.getElementById('footerbar'),hint=document.getElementById('hint'),all=document.getElementById('downloadAll');let items=[];
@@ -122,8 +155,4 @@ all.onclick=()=>items.forEach(it=>it.blob?download(it):process(it));
 function update(){bar.style.display=items.length?'flex':'none';hint.textContent=items.length+' image'+(items.length>1?'s':'')+' added · '+items.filter(x=>x.blob).length+' resized'}
 })();
 </script>
-</body></html>"""
-
-out = Path("/mnt/data/Resizely_SEO_Fixed.html")
-out.write_text(html, encoding="utf-8")
-print(f"Created: {out}")
+</body></html>

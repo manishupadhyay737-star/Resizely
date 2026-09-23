@@ -1,29 +1,31 @@
-RESIZELY SEO PACKAGE
+RESIZELY – FINAL SEO / ADSENSE PREPARATION PACKAGE
 
-Live site:
+Live URL:
 https://gentle-sea-0ca52db10.1.azurestaticapps.net/
 
-Files:
+Upload the contents of this folder to the ROOT of the GitHub Resizely repository.
+
+Included:
+- index.html – upgraded homepage and tool
+- about.html – About page
+- contact.html – Contact page (replace support-email placeholder before publishing)
+- privacy.html – Privacy Policy
+- terms.html – Terms of Service
+- disclaimer.html – Disclaimer
+- image-resizer.html – SEO landing page
+- image-compressor.html – SEO landing page
+- jpg-compressor.html – SEO landing page
+- png-compressor.html – SEO landing page
+- webp-converter.html – SEO landing page
+- image-size-reducer.html – SEO landing page
 - robots.txt
 - sitemap.xml
-- about.html
-- contact.html
-- privacy.html
-- terms.html
+- 404.html
+- staticwebapp.config.json
 
 IMPORTANT:
-The Contact page intentionally contains a placeholder for your dedicated support email. Replace that before publishing.
-
-Google Search Console:
-1. Open Search Console.
-2. Add the exact Azure URL as a URL-prefix property:
-   https://gentle-sea-0ca52db10.1.azurestaticapps.net/
-3. Verify ownership using an available method.
-4. Open Sitemaps.
-5. Submit:
-   sitemap.xml
-6. Use URL Inspection for:
-   https://gentle-sea-0ca52db10.1.azurestaticapps.net/
-   Then request indexing after the updated site is deployed.
-
-Do not submit a sitemap until these files are actually deployed at the listed URLs.
+1. Replace the Contact page support-email placeholder with a real dedicated website email before final AdSense submission.
+2. Keep the Azure URL in canonical/schema until a custom domain is connected.
+3. After deployment, open /robots.txt and /sitemap.xml in the browser.
+4. Submit the sitemap in Google Search Console.
+5. Request indexing for the homepage and important pages.
